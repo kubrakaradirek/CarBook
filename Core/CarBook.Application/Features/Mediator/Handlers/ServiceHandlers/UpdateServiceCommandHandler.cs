@@ -21,7 +21,6 @@ namespace CarBook.Application.Features.Mediator.Handlers.ServiceHandlers
         public async Task Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.ServiceId);
-            values.ServiceId = request.ServiceId;
             values.Title = request.Title;
             values.Description = request.Description;
             values.IconUrl = request.IconUrl;
