@@ -18,15 +18,15 @@ namespace CarBook.Application.Features.Mediator.Handlers.SocialMediaHandlers
         {
             _repository = repository;
         }
-        public async Task<List<GetSocialMediaQueryResult>> Handle(GetSocialMediaQuery request, CancellationToken cancellationToken)
+        public async  Task<List<GetSocialMediaQueryResult>> Handle(GetSocialMediaQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetSocialMediaQueryResult
             {
-                SocialMediaId= x.SocialMediaId, 
+                Name = x.Name,
+                SocialMediaId = x.SocialMediaId,
                 Url = x.Url,
-                Name = x.Name,  
-                Icon = x.Icon   
+                Icon = x.Icon
             }).ToList();
         }
     }
