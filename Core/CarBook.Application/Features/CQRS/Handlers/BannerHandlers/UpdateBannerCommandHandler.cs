@@ -18,9 +18,9 @@ namespace CarBook.Application.Features.CQRS.Handlers.BannerHandlers
         }
         public async Task Handle(UpdateBannerCommand command)
         {
-            var values=await _repository.GetByIdAsync(command.BannerId);
-            values.Title = command.Title;
+            var values = await _repository.GetByIdAsync(command.BannerId);
             values.Description = command.Description;
+            values.Title = command.Title;
             values.VideoUrl = command.VideoUrl;
             values.VideoDescription = command.VideoDescription;
             await _repository.UpdateAsync(values);
