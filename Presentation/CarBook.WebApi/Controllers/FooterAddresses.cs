@@ -30,7 +30,7 @@ namespace CarBook.WebApi.Controllers
             return Ok(value);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFooterAddresses(int id)
         {
             await _mediator.Send(new RemoveFooterAddressCommand(id));

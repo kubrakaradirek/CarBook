@@ -30,7 +30,7 @@ namespace CarBook.WebApi.Controllers
             return Ok(value);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveLocation(int id)
         {
             await _meditor.Send(new RemoveLocationCommand(id));

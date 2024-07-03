@@ -1,8 +1,8 @@
-﻿@model List<ResultBannerDto>
-
+﻿@model List<ResultLocationDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="page-content">
@@ -11,9 +11,9 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Anasayfa Banner Alanı</h4>
+                        <h4 class="card-title">Lokasyon Bilgileri Alanı</h4>
                         <p class="card-subtitle mb-4">
-                            Anasayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz. Tema bütünlüğünün bozulmaması adına lütfen sadece 1 tane veri girişi yapınız.Aksi durumlarda tema bütünlüğü bozulacaktır.
+                            Ana sayfa ve araç kiralama sayfasında yer alan araçların alınış ve bırakılış noktalarını temsil eden yer lokasyon kısmıdır. Aşağıda araç kiralama noktalarına ait lokasyon bilgilerinin isimleri yer almaktadır. Sağ tarafta yer alan buton üzerinden bu lokasyonun harita bilgisine erişim sağlayabilirsiniz.
                         </p>
                         <div class="table-responsive">
                             @if (Model.Count > 0)
@@ -21,26 +21,24 @@
                                 <table class="table mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Başlık</th>
-                                            <th>Açıklama</th>
-                                            <th>Video Url</th>
-                                            <th>Video Açıklama</th>
+                                            <th>#</th>
+                                            <th>Lokasyon</th>
                                             <th>Sil</th>
                                             <th>Güncelle</th>
-                                            <th>Youtube'da Aç</th>
+                                            <th>Konumu Aç</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
+                                            count++;
+
                                             <tr>
-                                                <td>@item.Title</td>
-                                                <td>@item.Description</td>
-                                                <td>@item.VideoUrl</td>
-                                                <td>@item.VideoDescription</td>
-                                                <td><a href="/Admin/Banner/RemoveBanner/@item.BannerId" class="btn btn-rounded btn-outline-danger">Sil</a></td>
-                                                <td><a href="/Admin/Banner/UpdateBanner/@item.BannerId" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
-                                                <td><a href="/Admin/Banner/UpdateBanner/@item.BannerId" class="btn btn-rounded btn-outline-dark">Youtube'da Aç</a></td>
+                                                <td>@count</td>
+                                                <td>@item.Name</td>
+                                                <td><a href="/Admin/Location/RemoveLocation/@item.LocationId" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/Location/UpdateLocation/@item.LocationId" class="btn btn-outline-success">Güncelle</a></td>
+                                                <td><a href="/Admin/Location/LocationDEtail/@item.LocationId" class="btn btn-outline-dark">Konumu Aç</a></td>
                                             </tr>
                                         }
                                     </tbody>
@@ -52,7 +50,7 @@
                                     <p class="mb-0">Herhangi bir kayıt bulunamadı.</p>
                                 </div>
                             }
-                            <a href="/Admin/Banner/CreateBanner/" class="btn btn-rounded btn-outline-primary">Yeni Banner Girişi</a>
+                            <a href="/Admin/Location/CreateLocation/" class="btn btn-rounded btn-outline-primary">Yeni Lokasyon Girişi</a>
                         </div>
                     </div>
                 </div>

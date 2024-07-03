@@ -1,5 +1,4 @@
-﻿@model List<ResultBannerDto>
-
+﻿@model List<ResultFooterAddressDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -11,9 +10,9 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Anasayfa Banner Alanı</h4>
+                        <h4 class="card-title">İletişim ve Footer Alanı Adres Sayfası</h4>
                         <p class="card-subtitle mb-4">
-                            Anasayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz. Tema bütünlüğünün bozulmaması adına lütfen sadece 1 tane veri girişi yapınız.Aksi durumlarda tema bütünlüğü bozulacaktır.
+                            İletişim ve Footer kısımlarında yer alan adres bilgilerine ait işlemleri bu sayfadan gerçekleştirebilirsiniz. Harita bilgisini lokasyon değeri olarak Google Map üzerinden alabilirsiniz.
                         </p>
                         <div class="table-responsive">
                             @if (Model.Count > 0)
@@ -21,26 +20,24 @@
                                 <table class="table mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Başlık</th>
+                                            <th>Adres</th>
+                                            <th>Telefon</th>
+                                            <th>E-mail</th>
                                             <th>Açıklama</th>
-                                            <th>Video Url</th>
-                                            <th>Video Açıklama</th>
                                             <th>Sil</th>
                                             <th>Güncelle</th>
-                                            <th>Youtube'da Aç</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                <td>@item.Title</td>
+                                                <td>@item.Address</td>
+                                                <td>@item.Phone</td>
+                                                <td>@item.Email</td>
                                                 <td>@item.Description</td>
-                                                <td>@item.VideoUrl</td>
-                                                <td>@item.VideoDescription</td>
-                                                <td><a href="/Admin/Banner/RemoveBanner/@item.BannerId" class="btn btn-rounded btn-outline-danger">Sil</a></td>
-                                                <td><a href="/Admin/Banner/UpdateBanner/@item.BannerId" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
-                                                <td><a href="/Admin/Banner/UpdateBanner/@item.BannerId" class="btn btn-rounded btn-outline-dark">Youtube'da Aç</a></td>
+                                                <td><a href="/Admin/FooterAddress/RemoveFooterAddress/@item.FooterAddressId" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                                                <td><a href="/Admin/FooterAddress/UpdateFooterAddress/@item.FooterAddressId" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
                                             </tr>
                                         }
                                     </tbody>
@@ -52,7 +49,7 @@
                                     <p class="mb-0">Herhangi bir kayıt bulunamadı.</p>
                                 </div>
                             }
-                            <a href="/Admin/Banner/CreateBanner/" class="btn btn-rounded btn-outline-primary">Yeni Banner Girişi</a>
+                            <a href="/Admin/FooterAddress/CreateFooterAddress/" class="btn btn-rounded btn-outline-primary">Yeni İletişim ve Footer Alanı Adres Girişi</a>
                         </div>
                     </div>
                 </div>
@@ -60,3 +57,5 @@
         </div>
     </div>
 </div>
+
+
