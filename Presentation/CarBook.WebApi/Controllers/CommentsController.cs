@@ -29,7 +29,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("Yorum başarıyla yapıldı.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult RemoveComment(int id)
         {
             var value = _commentRepository.GetById(id);
@@ -48,6 +48,12 @@ namespace CarBook.WebApi.Controllers
         public IActionResult GetComment(int id)
         {
             var value = _commentRepository.GetById(id);
+            return Ok(value);
+        }
+        [HttpGet("CommentListByBlog")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var value = _commentRepository.GetCommetsByBlogId(id);
             return Ok(value);
         }
     }
