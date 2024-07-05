@@ -10,7 +10,7 @@ namespace CarBook.Application.Interfaces.StatisticInterfaces
     {
         int GetCarCount();
         int GetLocationCount();
-        int GetLocationCount();
+        int GetAuthorCount();
         int GetBlogCount();
         int GetBrandCount();
         decimal GetAvgRentPriceForDaily();
