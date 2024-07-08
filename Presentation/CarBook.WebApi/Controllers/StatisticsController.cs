@@ -126,5 +126,7 @@ namespace CarBook.WebApi.Controllers
             var values = await _mediator.Send(new GetCarBrandAndModelByRentPriceDailyMinQuery());
             return Ok(values);
         }
+
+        
     }
 }
