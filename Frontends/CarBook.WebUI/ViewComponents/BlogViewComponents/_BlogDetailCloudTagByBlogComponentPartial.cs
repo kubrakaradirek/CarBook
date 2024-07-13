@@ -22,10 +22,9 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<GetByBlogIdTagCloudDto>>(jsonData);
-                return View(values); // Burada döndürdüğümüz model List<GetByBlogIdTagCloudDto> olacak
+                return View(values);
             }
 
-            // Başka bir şey döndürmek gerekiyorsa düzenleme yapılabilir
             return View();
         }
     }
