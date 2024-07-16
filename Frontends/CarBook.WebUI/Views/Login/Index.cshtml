@@ -1,4 +1,4 @@
-﻿@model CreateRegisterDto
+﻿@model CreateLoginDto
 @{
     Layout = null;
 }
@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>CarBook Kayıt Sayfası</title>
+    <title>CarBook Giriş Sayfası</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="MyraStudio" name="author" />
@@ -26,39 +26,25 @@
                     <div class="d-flex align-items-center min-vh-100">
                         <div class="w-100 d-block bg-white shadow-lg rounded my-5">
                             <div class="row">
-                                <div class="col-lg-5 d-none d-lg-block bg-register rounded-left" style="background-image: url('https://images.pexels.com/photos/10563223/pexels-photo-10563223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";></div>
+                                <div class="col-lg-5 d-none d-lg-block bg-login rounded-left" style="background-image: url('https://images.pexels.com/photos/10563223/pexels-photo-10563223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                            </div>
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center mb-5">
                                             <a href="/Default/Index/" class="text-dark font-size-22 font-family-secondary">
-                                                <i class="mdi mdi-alpha-x-circle"></i> <b>
-                                                    CarBook Yeni Kayıt Sayfası
-                                                </b>
+                                                <i class="mdi mdi-alpha-x-circle"></i><b>CarBook</b>
                                             </a>
                                         </div>
-                                        <h1 class="h5 mb-1">Bir hesap oluşturun!</h1>
-                                        <p class="text-muted mb-4">Bir hesabınız yok mu, 1 dakika içinde hesabınızı oluşturun!</p>
+                                        <h1 class="h5 mb-1">Tekrar Hoş Geldin!</h1>
+                                        <p class="text-muted mb-4">Admin sayfasına erişim için bilgilerinizi giriniz.</p>
                                         <form class="user" method="post">
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Adınız" asp-for="Name">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Soyadınız" asp-for="Surname">
-                                                </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Kullanıcı Adınız" asp-for="UserName">
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Adresiniz" asp-for="Email">
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Şifreniz" asp-for="Password">
                                             </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername" placeholder="Kullanıcı Adınız" asp-for="UserName">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Şifreniz" asp-for="Password">
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-success btn-block waves-effect waves-light"> Hesabı Oluştur </button>
+                                            <button class="btn btn-success btn-block waves-effect waves-light"> Giriş Yap </button>
                                         </form>
                                         <div class="text-center mt-4">
                                             <h5 class="text-muted font-size-16">Sosyal Medya Hesaplarımız</h5>
@@ -80,7 +66,8 @@
                                         </div>
                                         <div class="row mt-4">
                                             <div class="col-12 text-center">
-                                                <p class="text-muted mb-0">Bir hesabın var mı?  <a href="/Login/Index/" class="text-muted font-weight-medium ml-1"><b>Giriş Yap</b></a></p>
+                                                <p class="text-muted mb-2"><a href="pages-recoverpw.html" class="text-muted font-weight-medium ml-1">Şifrenizi mi Unuttunuz?</a></p>
+                                                <p class="text-muted mb-0">Bir hesabınız yok mu? <a href="/Register/CreateAppUser/" class="text-muted font-weight-medium ml-1"><b>Bir Hesap Oluştur</b></a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +79,6 @@
             </div>
         </div>
     </div>
-
     <script src="~/Admin/vertical/assets/js/jquery.min.js"></script>
     <script src="~/Admin/vertical/assets/js/bootstrap.bundle.min.js"></script>
     <script src="~/Admin/vertical/assets/js/metismenu.min.js"></script>
