@@ -60,26 +60,5 @@ Bu proje, ASP.NET Core 8.0 kullanılarak geliştirilmiş bir Web API ve MVC uygu
 ![24](https://github.com/user-attachments/assets/3295f933-8dfb-4ef8-a821-ae9058d5cf26)
 ![25](https://github.com/user-attachments/assets/467ead60-2261-4e66-9778-7247e46cd242)
 ![26](https://github.com/user-attachments/assets/03c3373c-9e7a-4426-82ed-e6e5bd630040)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Ekran görüntüsü 2024-07-16 185243](https://github.com/user-attachments/assets/e886fa25-9919-412c-aaf9-6cf3bb5b3345)
+![Ekran görüntüsü 2024-07-16 185213](https://github.com/user-attachments/assets/1e1513b4-297e-45cb-947b-bfa7d3c08e8a)
