@@ -1,20 +1,24 @@
-# CarBook Araç Kiralama Projesi
-Bu proje, ASP.NET Core 8.0 kullanılarak geliştirilmiş bir Web API ve MVC uygulamasıdır. Onion mimarisi kullanılarak tasarlanmış olup, "Asp.Net Core Api 8.0 Onion Architecture ile BookCar Projesi
-" adlı Murat Yücedağ'ın udemy  kursu ile geliştirilmiştir. CarBook, araç kiralama işlemlerinin gerçekleştirildiği, araç fiyatlarının listelendiği ve araçlar hakkında detaylı bilgi alınabildiği bir web uygulamasıdır. Backend tarafında Onion, CQRS ve Mediator desenleri uygulanmıştır. MSSQL veritabanı kullanılmış ve kullanıcı/rol yetkilendirmeleri JWT ile sağlanmıştır.Admin paneli için ayrı bir vitrin oluşturulmuştur.Rezervasyon işlemi gerçekleştirme, araca ait özellikleri,yorumları görebilme, seçilen lokasyona göre müsait araçları görme,bloglara yorum yapma,üye olma,bizw ulaşın kısmından mesaj gönderme gibi daha bir çok işlemleri içerir.Admin panelinde ise tüm işlevler için crud işlemleri ve blog yazarları, bir sürü ayrıntılı işlevlere sahiptir.Aşağıdaki fotoğraflardan panelleri inceleyebilirsiniz.
+# CarBook Vehicle Rental Project
+This project is a Web API and MVC application developed using ASP.NET Core 8.0. It was designed with Onion Architecture and developed following the Udemy course “Asp.Net Core Api 8.0 Onion Architecture with BookCar Project” by Murat Yücedağ.
+
+CarBook is a web application where users can rent vehicles, view vehicle prices, and access detailed information about cars. The backend implements Onion Architecture, CQRS, and Mediator patterns. MSSQL is used as the database, and user/role authorization is handled with JWT. A separate admin panel interface is provided.
+
+Features include: making reservations, viewing car details and comments, checking available cars by location, commenting on blogs, registering as a user, sending messages through the contact form, and more. The admin panel provides CRUD operations for all functionalities, managing blog authors, and many detailed administrative tasks.
 
 ## Proje Şeması:
 
-- CarBook.Domain: Temel varlıkları ve iş mantığını içerir.
-- CarBook.Application: DTO'ları, enumları, CQRS, Mediator, repository tasarım desenini ve doğrulama kurallarını içerir.
+- CarBook.Domain: Contains core entities and business logic.
+- 
+- CarBook.Application: Includes DTOs, enums, CQRS, Mediator, repository design patterns, and validation rules.
 
-- CarBook.Persistence: Repository sınıflarını ve veritabanı işlemlerini gerçekleştirir.
+- CarBook.Persistence: Implements repository classes and database operations.
 
-- CarBook.WebApi: API metodlarını barındırır ve dış dünyayla iletişim sağlar.
+- CarBook.WebApi: Hosts API methods and communicates with external clients.
 
-- CarBook.Dto: Frontend ile eşleşecek DTO (Data Transfer Object) yapılarını sağlar.
-
-- CarBook.WebUI: MVC ile tasarlanmış kullanıcı arayüzüdür. Admin paneli için ayrı bir alan (area) kullanılmıştır.
-## Kullanılan Teknolojiler:
+- CarBook.Dto: Provides DTO (Data Transfer Object) structures for frontend integration.
+  
+- CarBook.WebUI: MVC-based user interface with a separate Area for the admin panel.
+## Technologies Used:
 
 - ASP.NET Core 8
 - Web API
